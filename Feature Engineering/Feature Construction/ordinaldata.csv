@@ -1,0 +1,17 @@
+education_level,performance_level,target
+HighSchool,Poor,NoHire
+HighSchool,Average,Hire
+HighSchool,Good,Hire
+Bachelors,Poor,Hire
+Bachelors,Good,Hire
+Masters,Average,NoHire
+Masters,Good,Hire
+PhD,Excellent,Hire
+HighSchool,Excellent,Hire
+Bachelors,Average,Hire
+Bachelors,Excellent,Hire
+Masters,Poor,NoHire
+Masters,Excellent,Hire
+PhD,Poor,NoHire
+PhD,Average,Hire
+PhD,Good,Hire

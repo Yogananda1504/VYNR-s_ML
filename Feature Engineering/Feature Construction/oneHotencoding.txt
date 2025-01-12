@@ -1,0 +1,37 @@
+One-Hot Encoding and the N-1 Classes (Dummy Variable Trap)
+
+1. Why Use N-1 Classes:
+- When converting categorical variables into binary columns, we typically use n-1 classes
+    instead of n classes to avoid multicollinearity
+- This is known as the "dummy variable trap"
+
+Example:
+Original categorical column "Color" with 3 categories:
+Color: [Red, Blue, Green]
+
+Full one-hot encoding (problematic):
+Red:   [1, 0, 0]
+Blue:  [0, 1, 0]
+Green: [0, 0, 1]
+-> This creates perfect multicollinearity
+
+N-1 encoding (correct approach):
+Red:   [1, 0]
+Blue:  [0, 1]
+Green: [0, 0]
+-> Removes redundant information
+
+2. Multicollinearity Explanation:
+- When using all n categories, one column can be perfectly predicted from the others
+- For example: if Red=0 and Blue=0, then Green must be 1
+- This redundancy causes problems in:
+    * Linear regression models
+    * Statistical analysis
+    * Model interpretation
+    * Matrix operations (singular matrices)
+
+Best Practices:
+- Always drop one category (reference category)
+- Use n-1 dummy variables
+- The dropped category becomes the baseline for interpretation
+- Common in Python: pandas.get_dummies(drop_first=True)
